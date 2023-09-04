@@ -54,7 +54,7 @@ If you encounter any issues or errors, please check the error messages in the co
 
 ## Example
 
-![sample_1](https://github.com/sajiniho07/StitchingTiles/blob/master/output_ashlar.jpg)
+![sample_1](https://github.com/sajiniho07/StitchingTiles/blob/main/output_ashlar.jpg)
 
 ## References ##
 
