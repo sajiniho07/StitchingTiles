@@ -30,7 +30,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # Specify the path to your TIF image
-image_path = 'res/temp_tiff_output/cycle_4/img4_1.tif'
+# image_path = 'res/temp_tiff_output/cycle_4/img4_1.tif'
+image_path = "output.ome.tif"
 
 # Load the TIF image using matplotlib
 img = mpimg.imread(image_path)
