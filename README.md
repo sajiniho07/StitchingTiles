@@ -26,7 +26,7 @@ Before running the script, ensure you have the following prerequisites installed
 4. Run the script using Python:
 
    ```bash
-   python your_script.py
+   python ashlar_method_filepattern.py
    ```
 
 5. The script will perform the following steps:
