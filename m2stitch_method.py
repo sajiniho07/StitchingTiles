@@ -15,19 +15,22 @@ def read_dcm_images_from_directory(directory_path):
         file_path = os.path.join(directory_path, file_name)
         try:
             dataset = pydicom.dcmread(file_path)
-            image_array = apply_voi_lut(dataset.pixel_array, dataset)
-            dcm_images.append(image_array)
+            image = Image.fromarray(dataset.pixel_array)
+            dcm_images.append(image)
         except Exception as e:
             print(f"Error reading '{file_name}': {e}")
     return dcm_images
 
 def calculate_position_indices(images):
     num_images = len(images)
-    image_shape = images[0].shape
-    position_indices = np.zeros((num_images, len(image_shape)), dtype=int)
+    image_shape = images[0].size  # Get the size (width, height) of the images
+    col_count, row_count = image_shape  # Swap width and height for row and column counts
+    position_indices = {}
     for i in range(num_images):
-        indices = np.unravel_index(i, image_shape)
-        position_indices[i] = indices
+        row_index = i // col_count  # Calculate the row index
+        col_index = i % col_count   # Calculate the column index
+        position_indices[i] = {'row': row_index, 'col': col_index}
+    
     return position_indices
 
 input_dir = "res"
